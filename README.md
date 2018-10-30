@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
 
-Things you may want to cover:
+`2.5.1`
 
-* Ruby version
+## System dependencies
 
-* System dependencies
+```
+brew install postgresql
+brew install redis
+```
 
-* Configuration
+## Configuration
 
-* Database creation
+```
+bundle install
+rake db:setup
+rails server
+```
 
-* Database initialization
+## Testing
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use `guard` for automated test suite or `rspec .` for a one off run

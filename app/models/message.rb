@@ -12,8 +12,13 @@
 #
 #  index_messages_on_user_id  (user_id)
 #
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
 
 class Message < ApplicationRecord
+  belongs_to :user
+
   validates :content, presence: true
-  validates :user_id, presence: true
 end

@@ -1,8 +1,8 @@
 <h1>Justice League Chat</h1>
 
-
-<%= render partial: 'form', locals: { message: @message, user: { id: 1, name: 'Batman' }} %>
-<%= render partial: 'form', locals: { message: @message, user: { id: 2, name: 'Superman' }} %>
+<%- @users.each do |user| %>
+  <%= render partial: 'form', locals: { message: @message, user: user } %>
+<%- end %>
 
 <div id="messages">
   <%- @messages.each do |message| %>

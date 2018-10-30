@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @message = Message.new
+    @users = User.all
     @messages = MessageDecorator.decorate_collection(Message.all)
   end
 
