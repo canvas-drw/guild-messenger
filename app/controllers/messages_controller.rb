@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      # push message to Actioncable
+      ActionCable.server.broadcast 'messages_channel', message: "<article><span>#{@message.user_id}:</span><span>#{@message.content}</span></article>"
+      head :ok
     else
       # return error message to Actioncable
     end
