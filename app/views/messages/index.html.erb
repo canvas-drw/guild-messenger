@@ -1,9 +1,8 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<h1>Justice League Chat</h1>
 
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
+
+<%= render partial: 'form', locals: { message: @message, user: { id: 1, name: 'Batman' }} %>
+<%= render partial: 'form', locals: { message: @message, user: { id: 2, name: 'Superman' }} %>
 
 <div id="messages">
   <%- @messages.each do |message| %>

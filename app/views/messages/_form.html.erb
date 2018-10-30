@@ -1,0 +1,5 @@
+<%= simple_form_for message, remote: true do |f| %>
+  <%= f.input :content, label: user[:name] %>
+  <%= f.input :user_id, as: :hidden, input_html: { value: user[:id] } %>
+  <%= f.button :submit, 'Send Message' %>
+<% end %>

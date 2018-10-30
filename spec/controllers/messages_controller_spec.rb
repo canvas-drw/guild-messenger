@@ -12,7 +12,7 @@ RSpec.describe MessagesController, type: :controller do
   describe "POST #create" do
     it "creates a new message" do
       expect {
-        post :create, params: attributes_for(:message)
+        post :create, params: { message: attributes_for(:message) }
       }.to change(Message, :count).by(1)
     end
   end
