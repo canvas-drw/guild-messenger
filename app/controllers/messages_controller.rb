@@ -1,17 +1,19 @@
 class MessagesController < ApplicationController
   def index
     @message = Message.new
-    @messages = Message.all
+    @messages = MessageDecorator.decorate_collection(Message.all)
   end
 
   def create
     @message = Message.new(message_params)
 
     if @message.save
-      ActionCable.server.broadcast 'messages_channel', message: "<article><span>#{@message.user_id}:</span><span>#{@message.content}</span></article>"
+      ActionCable.server.broadcast 'messages_channel',
+                                   message: @message.decorate.formatted
       head :ok
     else
-      # return error message to Actioncable
+      flash[:error] = "Message not sent."
+      head :unprocessible_entity
     end
   end
 
