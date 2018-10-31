@@ -1,5 +1,5 @@
 <%= simple_form_for message, remote: true, html: { novalidate: false } do |f| %>
-  <%= f.input :content, label: "#{user.username}: ", required: true %>
-  <%= f.input :user_id, as: :hidden, input_html: { value: user.id } %>
-  <%= f.button :submit, 'Send Message' %>
+  <%= f.input :content, label: false, required: true, placeholder: 'Message Justice League' %>
+  <%= f.input :user_id, as: :hidden, input_html: { value: user_id } %>
+  <%= f.button :submit, 'Send Message', class: 'btn btn-primary' %>
 <% end %>

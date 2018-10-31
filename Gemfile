@@ -13,12 +13,13 @@ gem 'puma', '~> 3.11'
 gem 'redis', '~> 4.0'
 
 # Assets
+gem 'bootstrap', '~> 4.1.3'
 gem 'coffee-rails', '~> 4.2'
+gem 'draper'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-gem 'draper'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
